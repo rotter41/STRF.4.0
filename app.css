@@ -1,0 +1,196 @@
+/*FRONTED DEVELOPER: CHAT GPT */
+
+body
+{
+    text-align: center;
+    background-color: white;
+    background-image: radial-gradient(circle, rgba(76, 175, 80, 0.2) 20%, rgba(33, 150, 243, 0.2) 50%, rgba(255, 255, 255, 0) 80%);
+    background-size: 300% 300%;
+    animation: wave 5s ease-in-out infinite;
+    user-select: none;
+}
+
+@keyframes wave {
+    0% {
+        background-position: 100% 100%;
+    }
+    50% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+#WelcomeH1
+{
+    font-family: 'Arial', sans-serif; 
+    font-size: 2.5rem; 
+    color: #333; 
+    text-align: center; 
+    background: linear-gradient(90deg, #4CAF50, #2196F3); 
+    color: white; 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    user-select: none;
+}
+
+#BtStart {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: white;
+    background: linear-gradient(90deg, #2196F3, #4CAF50);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#BtStart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.facial-exercises {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+.facial-exercises h1 {
+    color: #2e7d32; /* Zelená barva pro nadpis */
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.facial-exercises p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.facial-exercises ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.facial-exercises ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.facial-exercises strong {
+    color: #388e3c; /* Tmavší zelená pro zvýraznění textu */
+}
+
+.facial-exercises ul li strong {
+    font-weight: bold;
+}
+
+#TextEx {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d2d2d;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#Timer {
+    font-family: 'Courier New', monospace;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #004d40;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #004d40;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#pngDiv {
+    display: flex;               /* Používáme Flexbox pro flexibilní uspořádání obrázků */
+    flex-wrap: wrap;              /* Umožníme, aby obrázky přecházely do nové řady, pokud není dost místa */
+    justify-content: center;     /* Zarovnání obrázků na střed */
+    gap: 15px;                   /* Mezera mezi obrázky */
+    padding: 20px;               /* Okraje kolem obrázků */
+    border: 2px solid #ddd;      /* Tenký rámeček kolem divu */
+    background-color: #f4f4f4;   /* Světle šedé pozadí pro lepší viditelnost */
+  }
+
+  /* Styl pro obrázky v pngDiv */
+  #pngDiv img {
+    max-width: 100%;             /* Obrázky se přizpůsobí šířce rodičovského divu */
+    height: auto;                /* Udrží poměr stran obrázku */
+    border-radius: 8px;          /* Zaoblení rohů obrázku */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Jemný stín kolem obrázku */
+  }
+
+  #INFO {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.5rem;
+    color: #004d40;
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #004d40;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+    line-height: 1.8;
+    text-align: center;
+}
+.userIntElements {
+    background-color: black; /* Černé pozadí */
+    color: white; /* Bílé písmo */
+    border: none; /* Žádný okraj */
+    border-radius: 3px; /* Menší zaoblení rohů */
+    padding: 5px 8px; /* Menší vnitřní odsazení */
+    cursor: pointer; /* Ukazatel myši jako ručka */
+    font-size: 14px; /* Menší velikost písma (šipky) */
+    text-align: center; /* Zarovnání textu (šipky) na střed */
+    line-height: 1; /* Vertikální vycentrování */
+    user-select: none; /* Zakázání označování textu */
+    transition: background-color 0.3s ease; /* Hladký přechod barvy při hoveru */
+    display: inline-block; /* Aby tlačítko bylo vedle textu */
+    
+  }
+  
+  .userIntElements:hover {
+    background-color: #333; /* Tmavší odstín při najetí myší */
+  }
+  
+  .userIntElements:active {
+    background-color: #555; /* Efekt při kliknutí */
+  }
+  
+  .userIntElements:focus {
+    outline: 2px solid #00ff00; /* Zvýraznění při fokusování klávesnicí */
+  }
+
+  #userInt
+  {
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+  }
+
+  .pictures
+  {
+    width: 400px;
+    height: 400px;
+  }
