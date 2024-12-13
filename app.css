@@ -1,15 +1,14 @@
-/*FRONTED DEVELOPER: CHAT GPT */
-
-body
-{
+body {
     text-align: center;
-    background-color: white;
-    background-image: radial-gradient(circle, rgba(76, 175, 80, 0.2) 20%, rgba(33, 150, 243, 0.2) 50%, rgba(255, 255, 255, 0) 80%);
+    background-color: #f0f8ff; /* Světle modrá pro zimní atmosféru */
+    background-image: radial-gradient(circle, rgba(255, 0, 0, 0.1) 20%, rgba(0, 255, 0, 0.1) 50%, rgba(255, 255, 255, 0) 80%); /* Vánoční barvy v pozadí */
     background-size: 300% 300%;
-    animation: wave 5s ease-in-out infinite;
+    animation: wave 10s ease-in-out infinite; /* Zpomalit animaci pozadí */
     user-select: none;
+    overflow: hidden; /* Aby sníh nevyčníval z okna */
 }
 
+/* Animace pro pozadí */
 @keyframes wave {
     0% {
         background-position: 100% 100%;
@@ -22,25 +21,57 @@ body
     }
 }
 
-#WelcomeH1
-{
-    font-family: 'Arial', sans-serif; 
-    font-size: 2.5rem; 
-    color: #333; 
-    text-align: center; 
-    background: linear-gradient(90deg, #4CAF50, #2196F3); 
-    color: white; 
-    padding: 10px 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    user-select: none;
+/* Animace sněhových vloček */
+@keyframes snow {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
 }
 
+/* Sněhové vločky */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    left: calc(100% * (rand() - 0.5)); /* Pohyb vloček náhodně zleva doprava */
+    animation: snow 10s linear infinite;
+    opacity: 0.8;
+    font-size: 24px;
+    z-index: 999;
+    color: white;
+}
+
+.snowflake:nth-child(odd) {
+    font-size: 30px;
+}
+
+.snowflake:nth-child(even) {
+    font-size: 18px;
+}
+
+/* Styl pro hlavní nadpis */
+#WelcomeH1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #fff; /* Bílé písmo pro kontrast */
+    background: linear-gradient(90deg, #D32F2F, #388E3C); /* Vánoční červená a zelená barva */
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    user-select: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Jemný stín pro text */
+}
+
+/* Styl pro tlačítko */
 #BtStart {
     font-family: 'Arial', sans-serif;
     font-size: 1rem;
     color: white;
-    background: linear-gradient(90deg, #2196F3, #4CAF50);
+    background: linear-gradient(90deg, #388E3C, #D32F2F); /* Vánoční zelená a červená */
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
@@ -54,6 +85,7 @@ body
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* Sekce pro cvičení obličeje */
 .facial-exercises {
     font-family: 'Arial', sans-serif;
     background-color: #fff;
@@ -66,18 +98,21 @@ body
     line-height: 1.6;
 }
 
+/* Nadpis v sekci cvičení obličeje */
 .facial-exercises h1 {
-    color: #2e7d32; /* Zelená barva pro nadpis */
+    color: #388E3C; /* Vánoční zelená pro nadpis */
     text-align: center;
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
+/* Text v sekci cvičení obličeje */
 .facial-exercises p {
     font-size: 1rem;
     margin-bottom: 15px;
 }
 
+/* Seznam cvičení */
 .facial-exercises ul {
     list-style-type: disc;
     padding-left: 20px;
@@ -88,14 +123,16 @@ body
     font-size: 1rem;
 }
 
+/* Zvýraznění textu */
 .facial-exercises strong {
-    color: #388e3c; /* Tmavší zelená pro zvýraznění textu */
+    color: #388E3C; /* Tmavší zelená pro zvýraznění textu */
 }
 
 .facial-exercises ul li strong {
     font-weight: bold;
 }
 
+/* Styl pro text cvičení */
 #TextEx {
     font-family: 'Arial', sans-serif;
     font-size: 2rem;
@@ -109,6 +146,7 @@ body
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Styl pro timer */
 #Timer {
     font-family: 'Courier New', monospace;
     font-size: 3rem;
@@ -122,6 +160,7 @@ body
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Styl pro obrázky v pngDiv */
 #pngDiv {
     display: flex;               /* Používáme Flexbox pro flexibilní uspořádání obrázků */
     flex-wrap: wrap;              /* Umožníme, aby obrázky přecházely do nové řady, pokud není dost místa */
@@ -130,17 +169,18 @@ body
     padding: 20px;               /* Okraje kolem obrázků */
     border: 2px solid #ddd;      /* Tenký rámeček kolem divu */
     background-color: #f4f4f4;   /* Světle šedé pozadí pro lepší viditelnost */
-  }
+}
 
-  /* Styl pro obrázky v pngDiv */
-  #pngDiv img {
+/* Styl pro obrázky v pngDiv */
+#pngDiv img {
     max-width: 100%;             /* Obrázky se přizpůsobí šířce rodičovského divu */
     height: auto;                /* Udrží poměr stran obrázku */
     border-radius: 8px;          /* Zaoblení rohů obrázku */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Jemný stín kolem obrázku */
-  }
+}
 
-  #INFO {
+/* Info box */
+#INFO {
     font-family: 'Verdana', sans-serif;
     font-size: 1.5rem;
     color: #004d40;
@@ -154,6 +194,8 @@ body
     line-height: 1.8;
     text-align: center;
 }
+
+/* Styl pro uživatelský interakční prvek (tlačítka, šipky) */
 .userIntElements {
     background-color: black; /* Černé pozadí */
     color: white; /* Bílé písmo */
@@ -167,30 +209,29 @@ body
     user-select: none; /* Zakázání označování textu */
     transition: background-color 0.3s ease; /* Hladký přechod barvy při hoveru */
     display: inline-block; /* Aby tlačítko bylo vedle textu */
-    
-  }
-  
-  .userIntElements:hover {
-    background-color: #333; /* Tmavší odstín při najetí myší */
-  }
-  
-  .userIntElements:active {
-    background-color: #555; /* Efekt při kliknutí */
-  }
-  
-  .userIntElements:focus {
-    outline: 2px solid #00ff00; /* Zvýraznění při fokusování klávesnicí */
-  }
+}
 
-  #userInt
-  {
+.userIntElements:hover {
+    background-color: #333; /* Tmavší odstín při najetí myší */
+}
+
+.userIntElements:active {
+    background-color: #555; /* Efekt při kliknutí */
+}
+
+.userIntElements:focus {
+    outline: 2px solid #00ff00; /* Zvýraznění při fokusování klávesnicí */
+}
+
+/* Styl pro interakční prvek na stránce */
+#userInt {
     position: absolute;
     left: 20px;
     bottom: 40px;
-  }
+}
 
-  .pictures
-  {
+/* Rozměry obrázků */
+.pictures {
     width: 400px;
     height: 400px;
-  }
+}
