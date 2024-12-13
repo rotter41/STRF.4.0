@@ -88,19 +88,19 @@ async function start()
         document.getElementById("pngDiv").removeChild(exImg)
         document.getElementById("pngDiv").style.display = "none"
 
-        if(i != 9){
+        if(i != 9) { 
             document.getElementById("TextEx").textContent = "REST"
             document.getElementById("INFO").textContent = "Take a deep breath and relax for a moment before starting the next exercise!"
-        }
 
-        for (j = 20; j !=0; j--) {
-            if (stopValue == true){ await waitForClick(); stopValue = !stopValue; document.getElementById("Timer").style.backgroundColor = "red";}
-            document.getElementById("Timer").style.backgroundColor = "white";
-            document.getElementById("Timer").textContent = j;
-            await sleep(1000)
+            for (j = 20; j !=0; j--) {
+                if (stopValue == true){ await waitForClick(); stopValue = !stopValue; document.getElementById("Timer").style.backgroundColor = "red";}
+                document.getElementById("Timer").style.backgroundColor = "white";
+                document.getElementById("Timer").textContent = j;
+                await sleep(1000)
+            }
+            if(i%2 == 1) exUp = exUp+4
+            lastEx = exPicker
         }
-        if(i%2 == 1) exUp = exUp+4
-        lastEx = exPicker
     }
     
     console.log("END")
